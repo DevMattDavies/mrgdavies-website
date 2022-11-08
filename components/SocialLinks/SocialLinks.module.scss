@@ -1,0 +1,50 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.links {
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  display: flex;
+
+  &__newsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 120px;
+    align-items: center;
+  }
+
+  &__newsIcon {
+    color: $black;
+  }
+
+  &__twitterContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 120px;
+    align-items: center;
+    position: relative;
+    top: -25px;
+  }
+
+  &__twitterIcon {
+    color: $black;
+  }
+
+  &__hr {
+    width: 50px;
+    rotate: 90deg;
+  }
+
+  &__tag {
+    @include BodyText($black);
+    font-size: 0.9rem;
+  }
+
+  &__tag--hover {
+    @include BodyText($red);
+    font-size: 0.9rem;
+  }
+}

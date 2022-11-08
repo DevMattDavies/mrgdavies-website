@@ -1,0 +1,14 @@
+@import "./variables";
+
+@mixin Subheading($color) {
+  font-family: "Montserrat", sans-serif;
+  color: $color;
+  font-size: $subheading-font-size;
+}
+
+@mixin BodyText($color) {
+  font-family: "Lora", serif;
+  color: $color;
+  font-size: $body-font-size;
+  font-weight: 300;
+}

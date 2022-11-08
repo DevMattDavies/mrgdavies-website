@@ -1,0 +1,15 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.iconContainer {
+  display: flex;
+  gap: 1rem;
+
+  &__icon {
+    color: $black;
+
+    &:hover {
+      color: $red;
+    }
+  }
+}

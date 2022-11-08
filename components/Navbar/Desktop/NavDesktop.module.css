@@ -1,0 +1,115 @@
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 2rem 3rem;
+  gap: 2rem;
+  max-width: 1800px;
+  margin: 0 auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media screen and (min-width: 1025px) {
+  .nav {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+}
+
+.nav__title {
+  color: #B3002D;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.nav__titleTop {
+  font-family: "Asterone Outline", sans-serif;
+  font-weight: 400;
+}
+
+.nav__titleBottom {
+  font-family: "Asterone", sans-serif;
+  font-weight: 400;
+  margin-left: 150px;
+}
+
+.nav__titleTop, .nav__titleBottom {
+  font-size: 3rem;
+}
+
+.nav__links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  width: 100%;
+  gap: 25px;
+  position: relative;
+  inset: 0;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-bottom: 10px;
+}
+
+@media screen and (min-width: 1025px) {
+  .nav__links {
+    margin-top: 3rem;
+  }
+}
+
+.nav__link {
+  font-family: "Montserrat", sans-serif;
+  color: #000000;
+  font-size: 1.8rem;
+  position: relative;
+}
+
+.nav__link:hover {
+  color: #B3002D;
+  position: relative;
+}
+
+.nav__linkStop {
+  font-family: "Montserrat", sans-serif;
+  color: #B3002D;
+  font-size: 1.8rem;
+}
+
+.nav__iconsContainer {
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+}
+
+@media screen and (min-width: 1025px) {
+  .nav__iconsContainer {
+    top: 35px;
+  }
+}
+/*# sourceMappingURL=NavDesktop.module.css.map */

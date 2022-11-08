@@ -1,0 +1,15 @@
+.iconContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+}
+
+.iconContainer__icon {
+  color: #000000;
+}
+
+.iconContainer__icon:hover {
+  color: #B3002D;
+}
+/*# sourceMappingURL=NavIcons.module.css.map */

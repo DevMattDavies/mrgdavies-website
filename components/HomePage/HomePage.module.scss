@@ -1,0 +1,158 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.home {
+  width: 100vw;
+
+  &__welcomeContainer {
+    background-color: $red;
+    width: 100%;
+    height: 450px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__welcome--desktop {
+    display: flex;
+    gap: 2rem;
+    max-width: $page-width;
+    margin: 0 auto;
+    padding: 4rem 3rem;
+  }
+
+  &__image {
+    width: 100%;
+
+    @media screen and (min-width: 480px) {
+      width: 25%;
+      height: auto;
+      height: 40%;
+      border: 1px solid white;
+      margin: auto 0;
+    }
+  }
+
+  &__welcomeText {
+    width: 100%;
+    padding: $padding-mobile;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+    top: -125px;
+    background: -webkit-linear-gradient(
+      rgba(255, 255, 255, 0.1) 1%,
+      rgba(255, 255, 255, 0.3) 3%,
+      rgba(255, 255, 255, 0.4) 5%,
+      rgba(255, 255, 255, 0.6) 10%,
+      rgba(255, 255, 255, 0.7) 15%,
+      rgba(255, 255, 255, 0.8) 20%,
+      rgba(255, 255, 255, 0.9) 25%,
+      rgba(255, 255, 255, 1) 30%
+    );
+
+    @media screen and (min-width: 480px) {
+      display: flex;
+      flex-direction: column;
+      width: 400px;
+      min-height: max-content;
+      align-items: space-between;
+      background: none;
+      inset: 0;
+    }
+  }
+
+  &__title {
+    @include Subheading($red);
+
+    @media screen and (min-width: 480px) {
+      @include Subheading($white);
+    }
+  }
+
+  &__titleStop {
+    @include Subheading($black);
+  }
+
+  &__bodyText {
+    @include BodyText($black);
+
+    @media screen and (min-width: 480px) {
+      @include BodyText($white);
+    }
+  }
+
+  &__news {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-top: 3rem;
+    position: relative;
+    top: -125px;
+    gap: 2rem;
+    padding: $padding-mobile;
+
+    @media screen and (min-width: 480px) {
+      max-width: $page-width;
+      margin: 0 auto;
+      padding: 4rem 3rem;
+      gap: 2rem;
+      inset: 0;
+    }
+  }
+
+  &__newsContainer {
+    max-width: $page-width;
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+    flex-direction: column;
+
+    @media screen and (min-width: 1025px) {
+      flex-direction: row;
+    }
+  }
+
+  &__newsItem {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+
+    @media screen and (min-width: 1025px) {
+      width: 50%;
+    }
+  }
+
+  &__subtitle {
+    @include Subheading($red);
+  }
+
+  &__newsTitle {
+    @include Subheading($black);
+  }
+
+  &__newsDate {
+    @include BodyText($black);
+    font-style: italic;
+    font-size: $body-font-size;
+    font-weight: 300;
+  }
+
+  &__newsContent {
+    @include BodyText($black);
+  }
+
+  &__readMore {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 25px;
+  }
+
+  &__seeAllPosts {
+    @include BodyText($black);
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,81 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 3rem;
+  gap: 2rem;
+  max-width: 1800px;
+  margin: 0 auto;
+  flex-direction: column;
+
+  @media screen and (min-width: 1025px) {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  &__title {
+    color: $red;
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+  }
+
+  &__titleTop {
+    font-family: "Asterone Outline", sans-serif;
+    font-weight: 400;
+  }
+
+  &__titleBottom {
+    font-family: "Asterone", sans-serif;
+    font-weight: 400;
+    margin-left: 150px;
+  }
+
+  &__titleTop,
+  &__titleBottom {
+    font-size: 3rem;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    gap: 25px;
+    position: relative;
+    inset: 0;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+
+    @media screen and (min-width: 1025px) {
+      margin-top: 3rem;
+    }
+  }
+
+  &__link {
+    @include Subheading($black);
+    position: relative;
+
+    &:hover {
+      color: $red;
+      position: relative;
+    }
+  }
+
+  &__linkStop {
+    @include Subheading($red);
+  }
+
+  &__iconsContainer {
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+
+    @media screen and (min-width: 1025px) {
+      top: 35px;
+    }
+  }
+}
