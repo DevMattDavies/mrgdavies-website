@@ -2,8 +2,9 @@ import styles from "./NavMobile.module.scss";
 import NavIcons from "../NavIcons/NavIcons";
 import NavModal from "./NavModal";
 import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 
-import { useState } from "react";
+import React, { useState } from "react";
 
 export const NavMobile: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -12,7 +13,13 @@ export const NavMobile: React.FC = () => {
     setIsModalOpen((prevIsModalOpen) => !prevIsModalOpen);
   };
 
-  console.log(isModalOpen);
+  interface propTypes {
+    modalHandler: () => void;
+  }
+
+  const props: propTypes = {
+    modalHandler: modalHandler,
+  };
 
   return (
     <div className={styles.nav}>
@@ -23,8 +30,12 @@ export const NavMobile: React.FC = () => {
       <div className={styles.nav__menu}>
         <NavIcons />
         <div className={styles.nav__modalContainer}>
-          <MenuIcon fontSize="large" onClick={modalHandler} />
-          {isModalOpen && <NavModal />}
+          {isModalOpen ? (
+            <CloseIcon fontSize="large" onClick={modalHandler} />
+          ) : (
+            <MenuIcon fontSize="large" onClick={modalHandler} />
+          )}
+          {isModalOpen && <NavModal {...props} />}
         </div>
       </div>
     </div>

@@ -1,0 +1,46 @@
+.writing__titleContainer {
+  background-color: #B3002D;
+  width: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.writing__title--desktop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 3rem;
+}
+
+.writing__titleText {
+  font-family: "Montserrat", sans-serif;
+  color: #ffffff;
+  font-size: 1.8rem;
+}
+
+.writing__titleStop {
+  color: #000000;
+  font-size: 1.8rem;
+}
+
+.writing__bodyText {
+  font-family: "Lora", serif;
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+/*# sourceMappingURL=WritingBlurb.module.css.map */

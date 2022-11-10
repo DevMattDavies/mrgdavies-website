@@ -3,20 +3,12 @@ import { useContext } from "react";
 import Link from "next/link";
 import { WidthContext } from "../../pages/_app";
 
-import SocialLinks from "../SocialLinks/SocialLinks";
-
 export const HomePage: React.FC = () => {
   const width: number = useContext(WidthContext);
   return (
-    <div className={width > 480 ? styles.home : ""}>
+    <div className={styles.home}>
       <div className={width > 480 ? styles.home__welcomeContainer : ""}>
-        <div
-          className={
-            width > 480
-              ? styles["home__welcome--desktop"]
-              : styles["home__welcome--mobile"]
-          }
-        >
+        <div className={width > 480 ? styles["home__welcome--desktop"] : ""}>
           <img
             className={styles.home__image}
             src="/assets/images/MD_1.jpg"
@@ -77,7 +69,7 @@ export const HomePage: React.FC = () => {
           </div>
         </div>
         <div className={styles.home__readMore}>
-          <Link className={styles.home__seeAllPosts} href="#">
+          <Link className={styles.home__seeAllPosts} href="/posts">
             see all posts
           </Link>
           <img
@@ -87,7 +79,6 @@ export const HomePage: React.FC = () => {
           ></img>
         </div>
       </div>
-      {/* {width >= 1025 && <SocialLinks />} */}
     </div>
   );
 };

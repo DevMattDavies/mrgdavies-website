@@ -1,0 +1,25 @@
+@import "../../../styles/mixins";
+@import "../../../styles/variables";
+
+.writing {
+  &__titleContainer {
+    @include TopContainer();
+  }
+
+  &__title--desktop {
+    @include SectionContainer();
+  }
+
+  &__titleText {
+    @include Subheading($white);
+  }
+
+  &__titleStop {
+    color: $black;
+    font-size: $subheading-font-size;
+  }
+
+  &__bodyText {
+    @include BodyText($white);
+  }
+}

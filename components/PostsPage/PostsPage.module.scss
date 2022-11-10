@@ -1,0 +1,21 @@
+@import "../../styles/mixins";
+@import "../../styles/mixins";
+
+.posts {
+  &__titleContainer {
+    @include TopContainer();
+  }
+
+  &__title--desktop {
+    @include SectionContainer();
+  }
+
+  &__titleText {
+    @include Subheading($white);
+  }
+
+  &__titleStop {
+    color: $black;
+    font-size: $subheading-font-size;
+  }
+}

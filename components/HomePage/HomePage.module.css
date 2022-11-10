@@ -1,11 +1,9 @@
-.home {
-  width: 100vw;
-}
-
 .home__welcomeContainer {
   background-color: #B3002D;
   width: 100%;
-  height: 450px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -18,10 +16,16 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
   padding: 4rem 3rem;
+  -ms-flex-direction: row;
+      flex-direction: row;
 }
 
 .home__image {
@@ -98,7 +102,7 @@
 .home__bodyText {
   font-family: "Lora", serif;
   color: #000000;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: 300;
 }
 
@@ -106,7 +110,7 @@
   .home__bodyText {
     font-family: "Lora", serif;
     color: #ffffff;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-weight: 300;
   }
 }
@@ -194,17 +198,17 @@
 .home__newsDate {
   font-family: "Lora", serif;
   color: #000000;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: 300;
   font-style: italic;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: 300;
 }
 
 .home__newsContent {
   font-family: "Lora", serif;
   color: #000000;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: 300;
 }
 
@@ -225,8 +229,34 @@
 .home__seeAllPosts {
   font-family: "Lora", serif;
   color: #000000;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: 300;
   font-size: 0.9rem;
+  position: relative;
+}
+
+.home__seeAllPosts:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+  -webkit-transition: -webkit-transform 0.5s ease-out;
+  transition: -webkit-transform 0.5s ease-out;
+  transition: transform 0.5s ease-out;
+  transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
+}
+
+.home__seeAllPosts:hover:after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
 }
 /*# sourceMappingURL=HomePage.module.css.map */

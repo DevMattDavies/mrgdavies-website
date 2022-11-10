@@ -55,13 +55,37 @@
     }
   }
 
+  &__linkContainer {
+    position: relative;
+  }
+
+  &__dropdown {
+    position: absolute;
+    left: 0;
+    background-color: $white;
+    z-index: 1000;
+    width: max-content;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
   &__link {
     @include Subheading($black);
-    position: relative;
+    // position: relative;
 
     &:hover {
       color: $red;
-      position: relative;
+    }
+  }
+
+  &__droplink {
+    @include Subheading($black);
+    font-size: 1.3rem;
+
+    &:hover {
+      color: $red;
     }
   }
 
