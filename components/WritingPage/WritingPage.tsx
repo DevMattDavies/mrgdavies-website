@@ -1,34 +1,42 @@
 import styles from "./WritingPage.module.scss";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import WritingData from "../../data/writing.json";
 
 import WritingBlurb from "./WritingBlurb/WritingBlurb";
+import { StyleRegistry } from "styled-jsx";
 
 export const WritingPage: React.FC = () => {
   const [subheading, setSubheading] = useState<string | null>(null);
-  const [pageInfo, setPageInfo] = useState<string | null>(null);
+  const [pageInfo, setPageInfo] = useState<{
+    title: string;
+    text: string;
+  } | null>(null);
 
-  interface writingProps {}
-
-  const pageInfoHandler = () => {
+  useEffect(() => {
     switch (subheading) {
       case "scriptwriting":
-        setPageInfo(WritingData.scriptwriting.text);
+        setPageInfo(WritingData.scriptwriting);
         break;
       case "fiction":
-        setPageInfo(WritingData.ficton.text);
+        setPageInfo(WritingData.ficton);
+        break;
       case "stage":
-        setPageInfo(WritingData.stage.text);
+        setPageInfo(WritingData.stage);
+        break;
       case "journalism":
-        setPageInfo(WritingData.journalism.text);
+        setPageInfo(WritingData.journalism);
+        break;
       case "non-fiction":
-        setPageInfo(WritingData["non-fiction"].text);
+        setPageInfo(WritingData["non-fiction"]);
+        break;
     }
-  };
+  }),
+    [subheading];
 
-  const pageNameHandler = (e: any) => {
-    e.PreventDefault();
+  const PageNameHandler = (e: any) => {
+    e.PreventDefault;
+    console.log(e.target.id);
     const pageRequested = e.target.id;
     setSubheading(pageRequested);
   };
@@ -38,24 +46,53 @@ export const WritingPage: React.FC = () => {
       <WritingBlurb />
       <div className={styles.writing__menu}>
         <Link
-          href="/writing/scriptwriting"
+          href="#info"
           className={styles.writing__menuItem}
+          id="scriptwriting"
+          onClick={PageNameHandler}
         >
           Scriptwriting<span className={styles.writing__titleStop}>.</span>
         </Link>
-        <Link href="/writing/fiction" className={styles.writing__menuItem}>
+        <Link
+          href="#info"
+          className={styles.writing__menuItem}
+          id="fiction"
+          onClick={PageNameHandler}
+        >
           Fiction<span className={styles.writing__titleStop}>.</span>
         </Link>
-        <Link href="/writing/stage" className={styles.writing__menuItem}>
+        <Link
+          href="#info"
+          className={styles.writing__menuItem}
+          id="stage"
+          onClick={PageNameHandler}
+        >
           Stage<span className={styles.writing__titleStop}>.</span>
         </Link>
-        <Link href="/writing/journalism" className={styles.writing__menuItem}>
+        <Link
+          href="#info"
+          className={styles.writing__menuItem}
+          id="journalism"
+          onClick={PageNameHandler}
+        >
           Journalism<span className={styles.writing__titleStop}>.</span>
         </Link>
-        <Link href="/writing/non-fiction" className={styles.writing__menuItem}>
+        <Link
+          href="#info"
+          className={styles.writing__menuItem}
+          id="non-fiction"
+          onClick={PageNameHandler}
+        >
           Non-Fiction<span className={styles.writing__titleStop}>.</span>
         </Link>
       </div>
+      {pageInfo && (
+        <div id="info" className={styles.writing__info}>
+          <h3 className={styles.writing__infoTitle}>{pageInfo.title}</h3>
+          <hr />
+          <p className={styles.writing__infoText}>{pageInfo.text}</p>
+        </div>
+      )}
     </div>
   );
 };

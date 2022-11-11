@@ -34,4 +34,16 @@
   &__titleStop {
     @include Subheading($red);
   }
+
+  &__info {
+    @include SectionContainer();
+  }
+
+  &__infoTitle {
+    @include Subheading($black);
+  }
+
+  &__infoText {
+    @include BodyText($black);
+  }
 }
