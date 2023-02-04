@@ -1,12 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AAGA,AAAA,cAAc,CAAC;EACb,OAAO,EAAE,IAAI;EACb,GAAG,EAAE,IAAI;CASV;;AAPE,AAAD,oBAAO,CAAC;EACN,KAAK,ECPD,OAAO;CDYZ;;AANA,AAGC,oBAHK,AAGJ,MAAM,CAAC;EACN,KAAK,ECXL,OAAO;CDYR",
-    "sources": [
-        "NavIcons.module.scss",
-        "../../../styles/_variables.scss",
-        "../../../styles/_mixins.scss",
-        "../../../styles/_variables.scss"
-    ],
-    "names": [],
-    "file": "NavIcons.module.css"
-}
+{"version":3,"sources":["NavIcons.module.scss","NavIcons.module.css","../../../styles/_variables.scss"],"names":[],"mappings":"AAGA;EACE,aAAA;EACA,SAAA;ACFF;ADIE;EACE,cEPI;ADKR;ADII;EACE,cEXA;ADSN","file":"NavIcons.module.css"}

@@ -6,8 +6,7 @@ html {
 
 * {
   font-size: 1rem;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
@@ -32,7 +31,6 @@ hr {
   font-style: normal;
   font-display: swap;
 }
-
 @font-face {
   font-family: "Asterone";
   src: url("/fonts/Asterone-Regular.woff2") format("woff2"), url("/fonts/Asterone-Regular.woff") format("woff"), url("/fonts/Asterone-Regular.ttf") format("truetype");
@@ -40,7 +38,6 @@ hr {
   font-style: normal;
   font-display: swap;
 }
-
 @font-face {
   font-family: "Asterone";
   src: url("/fonts/Asterone-Bold.woff2") format("woff2"), url("/fonts/Asterone-Bold.woff") format("woff"), url("/fonts/Asterone-Bold.ttf") format("truetype");
@@ -48,7 +45,6 @@ hr {
   font-style: normal;
   font-display: swap;
 }
-
 @font-face {
   font-family: "Asterone Outline";
   src: url("/fonts/AsteroneOutline-Regular.woff2") format("woff2"), url("/fonts/AsteroneOutline-Regular.woff") format("woff"), url("/fonts/AsteroneOutline-Regular.ttf") format("truetype");
@@ -56,7 +52,6 @@ hr {
   font-style: normal;
   font-display: swap;
 }
-
 @font-face {
   font-family: "Lora";
   src: url("/fonts/Lora-Bold.woff2") format("woff2"), url("/fonts/Lora-Bold.woff") format("woff"), url("/fonts/Lora-Bold.ttf") format("truetype");
@@ -64,7 +59,6 @@ hr {
   font-style: normal;
   font-display: swap;
 }
-
 @font-face {
   font-family: "Lora";
   src: url("/fonts/Lora-Regular.woff2") format("woff2"), url("/fonts/Lora-Regular.woff") format("woff"), url("/fonts/Lora-Regular.ttf") format("truetype");
@@ -72,7 +66,6 @@ hr {
   font-style: normal;
   font-display: swap;
 }
-
 @font-face {
   font-family: "Lora";
   src: url("/fonts/Lora-SemiBold.woff2") format("woff2"), url("/fonts/Lora-SemiBold.woff") format("woff"), url("/fonts/Lora-SemiBold.ttf") format("truetype");
@@ -80,12 +73,10 @@ hr {
   font-style: normal;
   font-display: swap;
 }
-
 @font-face {
   font-family: "Montserrat";
   src: url("/fonts/Montserrat-Bold.woff2") format("woff2"), url("/fonts/Montserrat-Bold.woff") format("woff"), url("/fonts/Montserrat-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
-}
-/*# sourceMappingURL=globals.css.map */
+}/*# sourceMappingURL=globals.css.map */

@@ -1,13 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AAIG,AAAD,sBAAiB,CAAC;ECYlB,gBAAgB,EChBZ,OAAO;EDiBX,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,WAAW;EACnB,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;CDdlB;;AAEA,AAAD,sBAAiB,CAAC;ECgBlB,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,GAAG,EAAE,IAAI;EACT,SAAS,ECpBE,MAAM;EDqBjB,MAAM,EAAE,MAAM;EACd,OAAO,EAAE,SAAS;CDnBjB;;AAEA,AAAD,iBAAY,CAAC;ECTb,WAAW,EAAE,wBAAwB;EACrC,KAAK,ECFC,OAAO;EDGb,SAAS,ECDY,MAAM;CFU1B;;AAEA,AAAD,iBAAY,CAAC;EACX,KAAK,EEhBD,OAAO;EFiBX,SAAS,EEdU,MAAM;CFe1B",
-    "sources": [
-        "PostsPage.module.scss",
-        "../../styles/_mixins.scss",
-        "../../styles/_variables.scss",
-        "../../styles/_mixins.scss",
-        "../../styles/_variables.scss"
-    ],
-    "names": [],
-    "file": "PostsPage.module.css"
-}
+{"version":3,"sources":["PostsPage.module.scss","../../styles/_mixins.scss","../../styles/_variables.scss","PostsPage.module.css"],"names":[],"mappings":"AAIE;ECYA,yBChBI;EDiBJ,WAAA;EACA,2BAAA;EAAA,wBAAA;EAAA,mBAAA;EACA,aAAA;EACA,mBAAA;AEdF;AHEE;ECgBA,aAAA;EACA,sBAAA;EACA,SAAA;EACA,iBCpBW;EDqBX,cAAA;EACA,kBAAA;AEfF;AHFE;ECTA,qCAAA;EACA,cCFM;EDGN,iBCDqB;ACevB;AHHE;EACE,cEhBI;EFiBJ,iBEdmB;ACmBvB","file":"PostsPage.module.css"}

@@ -25,10 +25,25 @@
 
   &__menu {
     @include SectionContainer();
+    padding: 0;
+
+    @media screen and (min-width: 481px) {
+      flex-direction: row;
+      overflow: hidden;
+    }
+  }
+
+  &__links {
+    @include SectionContainer();
+    width: 50%;
   }
 
   &__menuItem {
     @include Subheading($black);
+
+    &:hover {
+      color: $red;
+    }
   }
 
   &__titleStop {
@@ -37,6 +52,7 @@
 
   &__info {
     @include SectionContainer();
+    width: 100%;
   }
 
   &__infoTitle {

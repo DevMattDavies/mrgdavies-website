@@ -1,59 +1,36 @@
 .nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   gap: 2rem;
   width: 100vw;
   padding-top: 2rem;
   padding: 2rem;
 }
-
 .nav__title {
   color: #B3002D;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
 }
-
 .nav__titleTop {
   font-family: "Asterone Outline", sans-serif;
   font-weight: 400;
 }
-
 .nav__titleBottom {
   font-family: "Asterone", sans-serif;
   font-weight: 400;
 }
-
 .nav__titleTop, .nav__titleBottom {
   font-size: 3rem;
 }
-
 .nav__menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   width: 100%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
-
 .nav__modalContainer {
   position: relative;
-}
-/*# sourceMappingURL=NavMobile.module.css.map */
+}/*# sourceMappingURL=NavMobile.module.css.map */
