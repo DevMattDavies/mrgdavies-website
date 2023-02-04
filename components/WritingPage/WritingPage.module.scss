@@ -1,4 +1,4 @@
-@import "../../styles/mixins";
+@import "../../styles/variables";
 @import "../../styles/mixins";
 
 .writing {
@@ -26,6 +26,7 @@
   &__menu {
     @include SectionContainer();
     padding: 0;
+    gap: 0;
 
     @media screen and (min-width: 481px) {
       flex-direction: row;
@@ -35,7 +36,11 @@
 
   &__links {
     @include SectionContainer();
-    width: 50%;
+    width: 100%;
+
+    @media screen and (min-width: 481px) {
+      width: 50%;
+    }
   }
 
   &__menuItem {

@@ -1,42 +1,32 @@
 import styles from "./WritingPage.module.scss";
+import type { GetServerSideProps, NextPage } from "next";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import WritingData from "../../data/writing.json";
+import { useState } from "react";
 
 import WritingBlurb from "./WritingBlurb/WritingBlurb";
 
-export const WritingPage: React.FC = () => {
-  const [subheading, setSubheading] = useState<string | null>(null);
+import { TWritingData } from "../../types/writingData";
+
+export const WritingPage: React.FC<TWritingData> = ({ writingData }) => {
   const [pageInfo, setPageInfo] = useState<{
     title: string;
     text: string;
   } | null>(null);
 
-  useEffect(() => {
-    switch (subheading) {
-      case "scriptwriting":
-        setPageInfo(WritingData.scriptwriting);
-        break;
-      case "fiction":
-        setPageInfo(WritingData.ficton);
-        break;
-      case "stage":
-        setPageInfo(WritingData.stage);
-        break;
-      case "journalism":
-        setPageInfo(WritingData.journalism);
-        break;
-      case "non-fiction":
-        setPageInfo(WritingData["non-fiction"]);
-        break;
-    }
-  }),
-    [subheading];
-
   const PageNameHandler = (e: any) => {
     e.PreventDefault;
     const pageRequested = e.target.id;
-    setSubheading(pageRequested);
+    if (pageRequested === "scriptwriting") {
+      setPageInfo(writingData.scriptwriting);
+    } else if (pageRequested === "fiction") {
+      setPageInfo(writingData.fiction);
+    } else if (pageRequested === "stage") {
+      setPageInfo(writingData.stage);
+    } else if (pageRequested === "journalism") {
+      setPageInfo(writingData.journalism);
+    } else {
+      setPageInfo(writingData.nonfiction);
+    }
   };
 
   return (
@@ -79,7 +69,7 @@ export const WritingPage: React.FC = () => {
           <Link
             href="#info"
             className={styles.writing__menuItem}
-            id="non-fiction"
+            id="nonfiction"
             onClick={PageNameHandler}
           >
             Non-Fiction<span className={styles.writing__titleStop}>.</span>
@@ -88,7 +78,10 @@ export const WritingPage: React.FC = () => {
         <div id="info" className={styles.writing__info}>
           {pageInfo && (
             <>
-              <h3 className={styles.writing__infoTitle}>{pageInfo.title}</h3>
+              <h3 className={styles.writing__infoTitle}>
+                {pageInfo.title}
+                <span className={styles.writing__titleStop}>.</span>
+              </h3>
               <hr />
               <p className={styles.writing__infoText}>{pageInfo.text}</p>
             </>
