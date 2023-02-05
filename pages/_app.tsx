@@ -1,6 +1,7 @@
 import "../styles/globals.scss";
 import Head from "next/head";
 import Navbar from "../components/Navbar/Navbar";
+import Footer from "../components/Footer/Footer";
 import type { AppProps } from "next/app";
 import { useState, useEffect, createContext } from "react";
 
@@ -48,6 +49,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <main>
           <Component {...pageProps} />
         </main>
+        <Footer />
       </WidthContext.Provider>
     </>
   );

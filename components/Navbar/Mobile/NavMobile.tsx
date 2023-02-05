@@ -6,20 +6,18 @@ import CloseIcon from "@mui/icons-material/Close";
 
 import React, { useState } from "react";
 
-export const NavMobile: React.FC = () => {
+export const NavMobile = (): JSX.Element => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   const modalHandler = (): void => {
     setIsModalOpen((prevIsModalOpen) => !prevIsModalOpen);
   };
 
-  interface propTypes {
-    modalHandler: () => void;
+  if (isModalOpen === true) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "";
   }
-
-  const props: propTypes = {
-    modalHandler: modalHandler,
-  };
 
   return (
     <div className={styles.nav}>
@@ -28,14 +26,18 @@ export const NavMobile: React.FC = () => {
         <h1 className={styles.nav__titleBottom}>Davies</h1>
       </div>
       <div className={styles.nav__menu}>
-        <NavIcons />
         <div className={styles.nav__modalContainer}>
           {isModalOpen ? (
             <CloseIcon fontSize="large" onClick={modalHandler} />
           ) : (
             <MenuIcon fontSize="large" onClick={modalHandler} />
           )}
-          {isModalOpen && <NavModal {...props} />}
+          {isModalOpen && (
+            <>
+              <div className={styles.nav__background}></div>
+              <NavModal modalHandler={modalHandler} />
+            </>
+          )}
         </div>
       </div>
     </div>

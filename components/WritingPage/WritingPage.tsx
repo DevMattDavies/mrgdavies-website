@@ -1,21 +1,25 @@
 import styles from "./WritingPage.module.scss";
-import type { GetServerSideProps, NextPage } from "next";
 import Link from "next/link";
 import { useState } from "react";
+import { GetStaticProps, NextPage } from "next";
 
+import WritingData from "../../public/data/writing.json";
 import WritingBlurb from "./WritingBlurb/WritingBlurb";
-
 import { TWritingData } from "../../types/writingData";
 
-export const WritingPage: React.FC<TWritingData> = ({ writingData }) => {
+export const WritingPage: NextPage<TWritingData> = ({ writingData }) => {
+  // create state to render specific data from writingData prop
   const [pageInfo, setPageInfo] = useState<{
     title: string;
     text: string;
   } | null>(null);
 
-  const PageNameHandler = (e: any) => {
+  // onClick handler to set state to correct data
+  const pageNameHandler = (e: any): void => {
     e.PreventDefault;
+    // get target id
     const pageRequested = e.target.id;
+    // update pageInfo state based on id
     if (pageRequested === "scriptwriting") {
       setPageInfo(writingData.scriptwriting);
     } else if (pageRequested === "fiction") {
@@ -35,10 +39,10 @@ export const WritingPage: React.FC<TWritingData> = ({ writingData }) => {
       <div className={styles.writing__menu}>
         <div className={styles.writing__links}>
           <Link
-            href="#info"
+            href="/writing/scriptwriting"
             className={styles.writing__menuItem}
             id="scriptwriting"
-            onClick={PageNameHandler}
+            onClick={pageNameHandler}
           >
             Scriptwriting<span className={styles.writing__titleStop}>.</span>
           </Link>
@@ -46,7 +50,7 @@ export const WritingPage: React.FC<TWritingData> = ({ writingData }) => {
             href="#info"
             className={styles.writing__menuItem}
             id="fiction"
-            onClick={PageNameHandler}
+            onClick={pageNameHandler}
           >
             Fiction<span className={styles.writing__titleStop}>.</span>
           </Link>
@@ -54,7 +58,7 @@ export const WritingPage: React.FC<TWritingData> = ({ writingData }) => {
             href="#info"
             className={styles.writing__menuItem}
             id="stage"
-            onClick={PageNameHandler}
+            onClick={pageNameHandler}
           >
             Stage<span className={styles.writing__titleStop}>.</span>
           </Link>
@@ -62,7 +66,7 @@ export const WritingPage: React.FC<TWritingData> = ({ writingData }) => {
             href="#info"
             className={styles.writing__menuItem}
             id="journalism"
-            onClick={PageNameHandler}
+            onClick={pageNameHandler}
           >
             Journalism<span className={styles.writing__titleStop}>.</span>
           </Link>
@@ -70,12 +74,12 @@ export const WritingPage: React.FC<TWritingData> = ({ writingData }) => {
             href="#info"
             className={styles.writing__menuItem}
             id="nonfiction"
-            onClick={PageNameHandler}
+            onClick={pageNameHandler}
           >
             Non-Fiction<span className={styles.writing__titleStop}>.</span>
           </Link>
         </div>
-        <div id="info" className={styles.writing__info}>
+        <div className={styles.writing__info}>
           {pageInfo && (
             <>
               <h3 className={styles.writing__infoTitle}>
@@ -92,4 +96,13 @@ export const WritingPage: React.FC<TWritingData> = ({ writingData }) => {
   );
 };
 
-export default WritingPage;
+export const getStaticProps: GetStaticProps = async () => {
+  // assign WritingData to variable
+  const writingData = WritingData;
+  //   return variable as prop (must match type/interface so it can be destructured correctly)
+  return {
+    props: {
+      writingData,
+    },
+  };
+};

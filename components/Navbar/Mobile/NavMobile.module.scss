@@ -8,6 +8,7 @@
   width: 100vw;
   padding-top: 2rem;
   padding: 2rem;
+  position: relative;
 
   &__title {
     color: $red;
@@ -41,5 +42,14 @@
 
   &__modalContainer {
     position: relative;
+  }
+
+  &__background {
+    position: absolute;
+    top: 3rem;
+    left: -2rem;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
   }
 }

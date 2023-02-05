@@ -92,14 +92,4 @@
   &__linkStop {
     @include Subheading($red);
   }
-
-  &__iconsContainer {
-    position: absolute;
-    top: 3rem;
-    right: 3rem;
-
-    @media screen and (min-width: 1025px) {
-      top: 35px;
-    }
-  }
 }

@@ -58,6 +58,7 @@
   &__info {
     @include SectionContainer();
     width: 100%;
+    min-height: 1000px;
   }
 
   &__infoTitle {

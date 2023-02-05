@@ -2,8 +2,9 @@ import styles from "./HomePage.module.scss";
 import { useContext } from "react";
 import Link from "next/link";
 import { WidthContext } from "../../pages/_app";
+import { NextPage } from "next";
 
-export const HomePage: React.FC = () => {
+export const HomePage: NextPage = () => {
   const width: number = useContext(WidthContext);
   return (
     <div className={styles.home}>
@@ -44,11 +45,11 @@ export const HomePage: React.FC = () => {
             <hr />
             <h3 className={styles.home__newsDate}>July 19, 2022</h3>
             <p className={styles.home__newsContent}>
-              Marking the centenary of Desmond Bagley&apos;s birth (see Domino
+              {`Marking the centenary of Desmond Bagley's birth (see Domino
               Island, below), publishers HarperCollins have commissioned a brand
               new novel featuring the same protagonist, Bill Kemp. Entitled
               Outback, it&apos;s due for publication in hardback and Kindle on
-              May 11, 2023...
+              May 11, 2023...`}
               <br />
               <i>read more</i>
             </p>
@@ -60,11 +61,11 @@ export const HomePage: React.FC = () => {
             <hr />
             <h3 className={styles.home__newsDate}>July 19, 2022</h3>
             <p className={styles.home__newsContent}>
-              Marking the centenary of Desmond Bagley’s birth (see Domino
+              {`Marking the centenary of Desmond Bagley's birth (see Domino
               Island, below), publishers HarperCollins have commissioned a brand
               new novel featuring the same protagonist, Bill Kemp. Entitled
               Outback, it's due for publication in hardback and Kindle on May
-              11, 2023...
+              11, 2023...`}
               <br />
               <i>read more</i>
             </p>
@@ -85,4 +86,3 @@ export const HomePage: React.FC = () => {
   );
 };
 
-export default HomePage;

@@ -33,9 +33,6 @@ export const NavDesktop: React.FC = () => {
         <h1 className={styles.nav__titleTop}>Michael</h1>
         <h1 className={styles.nav__titleBottom}>Davies</h1>
       </div>
-      <div className={styles.nav__iconsContainer}>
-        <NavIcons />
-      </div>
       <div>
         <ul className={styles.nav__links}>
           <li>
