@@ -4,7 +4,7 @@ import NavModal from "./NavModal";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export const NavMobile = (): JSX.Element => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -13,11 +13,13 @@ export const NavMobile = (): JSX.Element => {
     setIsModalOpen((prevIsModalOpen) => !prevIsModalOpen);
   };
 
-  if (isModalOpen === true) {
-    document.body.style.overflow = "hidden";
-  } else {
-    document.body.style.overflow = "";
-  }
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [isModalOpen]);
 
   return (
     <div className={styles.nav}>
